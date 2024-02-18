@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    AppNavigation(WordService.wordRepo)
+                    AppNavigation(WordService.wordRepo, AppConfig.HAVE_EDITING)
                 }
             }
         }

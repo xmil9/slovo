@@ -17,7 +17,9 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 
-class WordListViewModel(private val wordRepo: WordRepository) : ViewModel() {
+class WordListViewModel(private val wordRepo: WordRepository, val haveEditing: Boolean) :
+    ViewModel() {
+
     var wordList = mutableStateOf(listOf<Word>())
     var searchResults = mutableStateOf(listOf<Word>())
 

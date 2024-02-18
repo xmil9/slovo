@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @Composable
-fun AppNavigation(wordRepo: WordRepository) {
+fun AppNavigation(wordRepo: WordRepository, haveEditing: Boolean) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = AppScreen.WordList.route) {
@@ -19,7 +19,7 @@ fun AppNavigation(wordRepo: WordRepository) {
         // Word list
         composable(AppScreen.WordList.route) {
             WordListView(
-                vm = WordListViewModel(wordRepo),
+                vm = WordListViewModel(wordRepo, haveEditing),
                 navToWord = { wordId ->
                     val route = AppScreen.WordDetail.route + "/$wordId"
                     navController.navigate(route)

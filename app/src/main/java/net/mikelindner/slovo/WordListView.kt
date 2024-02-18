@@ -49,11 +49,13 @@ fun WordListView(
         bottomBar = bottomBar,
         topBar = { AppBar(title = AppScreen.WordList.title, showBackButton = false) },
         floatingActionButton = {
-            FloatingActionButton(
-                modifier = Modifier.padding(20.dp),
-                onClick = { navToAddWord() }
-            ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = null)
+            if (vm.haveEditing) {
+                FloatingActionButton(
+                    modifier = Modifier.padding(20.dp),
+                    onClick = { navToAddWord() }
+                ) {
+                    Icon(imageVector = Icons.Default.Add, contentDescription = null)
+                }
             }
         }
     ) { padding ->
@@ -136,7 +138,7 @@ fun WordListViewPreview() {
     SlovoTheme {
         val context = LocalContext.current
         WordListView(
-            WordListViewModel(NullWordRepository()),
+            WordListViewModel(NullWordRepository(), AppConfig.HAVE_EDITING),
             {},
             {},
             makeBottomBar(AppScreen.WordList, NavHostController(context))
