@@ -1,2 +1,2 @@
 # Slovo
-App for learning Russian vocabulary.
+Android app for learning Russian vocabulary.
