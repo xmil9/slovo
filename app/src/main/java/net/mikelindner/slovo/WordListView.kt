@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
@@ -29,7 +31,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -44,6 +48,11 @@ fun WordListView(
     bottomBar: @Composable () -> Unit
 ) {
     var searchPattern = remember { mutableStateOf("") }
+    val focusManager = LocalFocusManager.current
+
+    fun onSearch() {
+        vm.searchWords(searchPattern.value)
+    }
 
     Scaffold(
         bottomBar = bottomBar,
@@ -75,14 +84,21 @@ fun WordListView(
                 verticalAlignment = Alignment.Top,
             ) {
                 OutlinedTextField(
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            focusManager.clearFocus()
+                            onSearch()
+                        }
+                    ),
                     label = { Text("Search") },
                     modifier = Modifier.fillMaxWidth(),
-                    value = searchPattern.value,
-                    singleLine = true,
                     onValueChange = { pattern ->
                         searchPattern.value = pattern
-                        vm.searchWords(pattern)
-                    }
+                        onSearch()
+                    },
+                    singleLine = true,
+                    value = searchPattern.value,
                 )
             }
 
