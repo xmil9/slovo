@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.view
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack

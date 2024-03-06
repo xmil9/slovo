@@ -1,14 +1,20 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.app
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
+import net.mikelindner.slovo.view.WordDetailView
+import net.mikelindner.slovo.view.WordEditorView
+import net.mikelindner.slovo.view.WordListView
+import net.mikelindner.slovo.view.WordListViewModel
+import net.mikelindner.slovo.view.WordQuizView
+import net.mikelindner.slovo.view.WordQuizViewModel
+import net.mikelindner.slovo.db.WordRepository
+import net.mikelindner.slovo.view.WordViewModel
+import net.mikelindner.slovo.view.makeBottomBar
 
 @Composable
 fun AppNavigation(wordRepo: WordRepository, haveEditing: Boolean) {

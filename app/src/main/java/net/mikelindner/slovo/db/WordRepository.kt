@@ -1,4 +1,6 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.db
+
+import net.mikelindner.slovo.domain.Word
 
 interface WordRepository {
     suspend fun getWords(): List<Word>

@@ -1,5 +1,6 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.domain
 
+import net.mikelindner.slovo.db.Words
 import kotlin.random.Random
 
 class WordCollection : Words {

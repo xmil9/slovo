@@ -1,11 +1,12 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.view
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import net.mikelindner.slovo.db.WordRepository
+import net.mikelindner.slovo.domain.Word
 
 class WordViewModel(
     private val wordRepo: WordRepository,

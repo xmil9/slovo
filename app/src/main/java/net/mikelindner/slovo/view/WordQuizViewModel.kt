@@ -1,10 +1,16 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.view
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import net.mikelindner.slovo.db.WordRepository
+import net.mikelindner.slovo.domain.EnglishTranslation
+import net.mikelindner.slovo.domain.RussianTranslation
+import net.mikelindner.slovo.domain.Translation
+import net.mikelindner.slovo.domain.Word
+import net.mikelindner.slovo.domain.toEnglish
+import net.mikelindner.slovo.domain.toRussian
 import java.util.Locale
 
 class WordQuizViewModel(private val wordRepo: WordRepository) : ViewModel() {

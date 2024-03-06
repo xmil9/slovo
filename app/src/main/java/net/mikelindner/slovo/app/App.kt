@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.app
 
 import android.app.Application
 

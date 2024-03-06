@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.domain
 
 import android.os.Parcelable
 import androidx.annotation.NonNull

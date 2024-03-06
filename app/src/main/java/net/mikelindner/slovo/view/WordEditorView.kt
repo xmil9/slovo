@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -29,6 +28,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import net.mikelindner.slovo.app.AppScreen
+import net.mikelindner.slovo.db.NullWordRepository
+import net.mikelindner.slovo.domain.wordClasses
 import net.mikelindner.slovo.ui.theme.SlovoTheme
 
 @Composable

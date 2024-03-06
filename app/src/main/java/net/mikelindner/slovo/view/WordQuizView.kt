@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -42,6 +42,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import net.mikelindner.slovo.app.AppScreen
+import net.mikelindner.slovo.db.NullWordRepository
+import net.mikelindner.slovo.domain.EnglishTranslation
+import net.mikelindner.slovo.domain.RussianTranslation
+import net.mikelindner.slovo.domain.Translation
+import net.mikelindner.slovo.domain.toEnglish
+import net.mikelindner.slovo.domain.toRussian
 import net.mikelindner.slovo.ui.theme.SlovoTheme
 
 @Composable

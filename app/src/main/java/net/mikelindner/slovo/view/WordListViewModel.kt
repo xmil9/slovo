@@ -1,21 +1,11 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.view
 
-import android.util.Log
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.count
-import kotlinx.coroutines.flow.emptyFlow
-import kotlinx.coroutines.flow.onCompletion
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
+import net.mikelindner.slovo.db.WordRepository
+import net.mikelindner.slovo.domain.Word
 
 class WordListViewModel(private val wordRepo: WordRepository, val haveEditing: Boolean) :
     ViewModel() {

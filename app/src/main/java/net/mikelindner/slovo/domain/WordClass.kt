@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.domain
 
 sealed class WordClass(val name: String, val display: String, val description: String) {
     data object Adjective: WordClass(

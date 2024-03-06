@@ -1,4 +1,4 @@
-package net.mikelindner.slovo
+package net.mikelindner.slovo.domain
 
 // Abstracts the direction of a translation.
 interface Translation {
